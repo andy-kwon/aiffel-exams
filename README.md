@@ -8,3 +8,5 @@
    * 손글씨 판독 [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp02/0106_01_digits.ipynb)
    * 와인식별 [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp02/0106_02_wines.ipynb)
    * 유방암 진단 [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp02/0106_03_breast_cancer.ipynb)
+3. 스티커앱
+   * 얼굴에 고양이수염 올리기 [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp03/0111_camera_sticker.ipynb)
