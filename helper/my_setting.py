@@ -49,7 +49,7 @@ Aiffel SSH@Git setting helper
             "아이펠 서버 환경이 아닌 것 같습니다..\n아래 URL을 참고하세요\nhttps://~~~", bcolors.WARNING
         )
 
-    if not os.path.isfile("~/bash_shortcut.sh"):
+    if not os.path.isfile("bash_shortcut.sh"):
         command(
             "wget https://raw.githubusercontent.com/andy-kwon/aiffel-exams/master/helper/bash_shortcut.sh"
         )
