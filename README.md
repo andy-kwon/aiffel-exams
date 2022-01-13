@@ -11,4 +11,4 @@
 3. 스티커앱
    * 얼굴에 고양이수염 올리기 [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp03/0111_camera_sticker.ipynb)
 4. 가사쓰기
-   * 인공지능이 만든 가사[바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp04/0113_lyrics.ipynb)
+   * 인공지능이 만든 가사 [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp04/0113_lyrics.ipynb)
