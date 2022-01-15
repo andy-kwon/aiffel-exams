@@ -32,15 +32,14 @@ if __name__ == "__main__":
         """==============================================
 Aiffel SSH@Git setting helper
 ==============================================
-1. 아이펠 서버 환경에서 Git을 SSH로 사용할 수 있도록 키와 정보를 저장 합니다.
-2. ls -al 명령어를 명령어 ll 로 등록합니다.
+아이펠 서버 환경에서 Git을 SSH로 사용할 수 있도록 키와 정보를 저장 합니다.
 
-실행 중 종료하고 싶으시면 언제든 Ctrl + C 를 누르시면 됩니다!  
+실행 중 종료하고 싶으시면 언제든 Ctrl + C 를 누르시면 됩니다.
 """,
         bcolors.OKGREEN,
     )
 
-    if not os.path.isfile("my_setting.config"):
+    if not os.path.isfile(".my_setting.config"):
         while True:
             your_name = input("Git 에 기록할 이름을 입력하세요(필수): ").strip()
             if your_name == "":
@@ -54,10 +53,10 @@ Aiffel SSH@Git setting helper
             if your_email:
                 break
 
-        with open("my_setting.config", "w") as f:
+        with open(".my_setting.config", "w") as f:
             f.write(f"{your_name}|{your_email}")
     else:
-        with open("my_setting.config", "r") as f:
+        with open(".my_setting.config", "r") as f:
             your_name, your_email = f.read().strip().split("|")
 
     command(f'git config --global user.name "{your_name}"')
@@ -132,14 +131,5 @@ Aiffel SSH@Git setting helper
     print_color(f"> 파일 권한을 조정하고 폴더 위치를 재 조정합니다", bcolors.OKCYAN)
     command(f"chmod 0400 {rsa_path}")
     command(f"cp -R {ssh_dir} /root")
-
-    # 단축키 등록
-    print("")
-    print_color(f"> 간단한 명령어들을 추가합니다", bcolors.OKCYAN)
-    if not os.path.isfile("bash_shortcut.sh"):
-        command(
-            "wget https://raw.githubusercontent.com/andy-kwon/aiffel-exams/master/helper/bash_shortcut.sh"
-        )
-    command(f"bash {now_pwd}/bash_shortcut.sh")
 
     print_color(f"이제 세팅이 마무리 되었습니다!", bcolors.OKGREEN)
