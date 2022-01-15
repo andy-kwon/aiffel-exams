@@ -32,13 +32,38 @@ if __name__ == "__main__":
         """==============================================
 Aiffel SSH@Git setting helper
 ==============================================
-1. 아이펠 서버 환경에서 Git을 SSH로 사용할 수 있도록 키를 생성합니다.
-2. ls -al 명령어를 명령어 ll 로 줄여줍니다.
+1. 아이펠 서버 환경에서 Git을 SSH로 사용할 수 있도록 키와 정보를 저장 합니다.
+2. ls -al 명령어를 명령어 ll 로 등록합니다.
 
-실행 중 종료하고 싶으시면 언제든 Ctrl + C 를 누르시면 됩니다!   
+실행 중 종료하고 싶으시면 언제든 Ctrl + C 를 누르시면 됩니다!  
 """,
         bcolors.OKGREEN,
     )
+
+    if not os.path.isfile("my_setting.config"):
+        while True:
+            your_name = input("Git 에 기록할 이름을 입력하세요(필수): ").strip()
+            if your_name == "":
+                print_color("이름을 입력하지 않았습니다. 다시 입력하세요", bcolors.WARNING)
+            if your_name:
+                break
+        while True:
+            your_email = input("Git 에 기록할 이메일 주소를 입력하세요(필수): ").strip()
+            if your_email == "":
+                print_color("이메일을 입력하지 않았습니다. 다시 입력하세요", bcolors.WARNING)
+            if your_email:
+                break
+
+        with open("my_setting.config", "w") as f:
+            f.write(f"{your_name}|{your_email}")
+    else:
+        with open("my_setting.config", "r") as f:
+            your_name, your_email = f.read().strip().split("|")
+
+    command(f'git config --global user.name "{your_name}"')
+    command(f'git config --global user.email "{your_email}"')
+    print_color("git 유저 설정을 마쳤습니다.", bcolors.OKGREEN)
+    print("")
 
     now_pwd = command("pwd")
     print(f"현재 디렉토리 위치: {now_pwd}")
@@ -49,13 +74,7 @@ Aiffel SSH@Git setting helper
             "아이펠 서버 환경이 아닌 것 같습니다..\n아래 URL을 참고하세요\nhttps://~~~", bcolors.WARNING
         )
 
-    if not os.path.isfile("bash_shortcut.sh"):
-        command(
-            "wget https://raw.githubusercontent.com/andy-kwon/aiffel-exams/master/helper/bash_shortcut.sh"
-        )
-
-    command("bash bash_shortcut.sh")
-
+    # SSH 키 체크
     if os.path.isfile(f"/root/.ssh/id_rsa"):
         print_color(f"===============================")
         print_color(command(f"cat /root/.ssh/id_rsa.pub"), bcolors.OKGREEN)
@@ -79,7 +98,6 @@ Aiffel SSH@Git setting helper
     if os.path.isfile(rsa_path):
         print("")
         print_color("Step 2. ssh 키파일이 존재합니다. 다음으로 계속 진행합니다", bcolors.OKCYAN)
-
     else:
         print("")
         print_color("Step 2. ssh 키파일이 존재하지 않습니다", bcolors.OKCYAN)
@@ -115,7 +133,13 @@ Aiffel SSH@Git setting helper
     command(f"chmod 0400 {rsa_path}")
     command(f"cp -R {ssh_dir} /root")
 
+    # 단축키 등록
     print("")
     print_color(f"> 간단한 명령어들을 추가합니다", bcolors.OKCYAN)
-    command(f'touch ~/.bashrc && echo ""')
+    if not os.path.isfile("bash_shortcut.sh"):
+        command(
+            "wget https://raw.githubusercontent.com/andy-kwon/aiffel-exams/master/helper/bash_shortcut.sh"
+        )
+    command(f"bash {now_pwd}/bash_shortcut.sh")
+
     print_color(f"이제 세팅이 마무리 되었습니다!", bcolors.OKGREEN)
