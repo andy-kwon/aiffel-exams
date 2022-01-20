@@ -13,6 +13,6 @@
 4. 가사쓰기
    * 인공지능이 만든 가사 [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp04/0113_lyrics.ipynb)
 5. 하이퍼파라미터
-   * 진행중
+   * 캐글 집값예측 [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp05/hyperparameter.ipynb)
 7. 네이버 영화 리뷰분석
    * word2vec [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp06/naver_movie_reviews.ipynb)
