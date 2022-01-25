@@ -14,5 +14,7 @@
    * 인공지능이 만든 가사 [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp04/0113_lyrics.ipynb)
 5. 하이퍼파라미터
    * 캐글 집값예측 [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp05/hyperparameter.ipynb)
-7. 네이버 영화 리뷰분석
+6. 네이버 영화 리뷰분석
    * word2vec [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp06/naver_movie_reviews.ipynb)
+7. 카메라 인물모드
+   * Semantic Segmentation [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp07/focus_human_image.ipynb)
