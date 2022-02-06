@@ -18,3 +18,5 @@
    * word2vec [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp06/naver_movie_reviews.ipynb)
 7. 카메라 인물모드
    * Semantic Segmentation [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp07/focus_human_image.ipynb)
+8. 뉴스 요약봇
+   * RNN [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp08/news_summary.ipynb)
