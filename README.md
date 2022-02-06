@@ -20,3 +20,5 @@
    * Semantic Segmentation [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp07/focus_human_image.ipynb)
 8. 뉴스 요약봇
    * RNN [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp08/news_summary.ipynb)
+9. 폐렴 진단
+   * CNN [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp09/pneumonia.ipynb)
