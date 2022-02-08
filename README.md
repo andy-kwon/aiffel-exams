@@ -23,4 +23,4 @@
 9. 폐렴 진단
    * CNN [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp09/pneumonia.ipynb)
 10. CIFAR-10 이미지 생성
-   * DCGAN [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp10/DCGAN.ipynb)
+    * DCGAN [바로가기](https://github.com/andy-kwon/aiffel-exams/blob/master/exp10/DCGAN.ipynb)
